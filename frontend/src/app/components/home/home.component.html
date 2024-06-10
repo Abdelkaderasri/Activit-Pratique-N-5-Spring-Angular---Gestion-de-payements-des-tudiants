@@ -1,0 +1,24 @@
+<div class="container mt-5">
+  <h2>Dashboard</h2>
+  <div class="mt-5">
+    <h2>Welcome, {{ authService.getCurrentUser().username }}</h2>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card text-white bg-primary mb-3">
+        <div class="card-header">Total Payments</div>
+        <div class="card-body">
+          <h2 class="card-title mb-0">{{ paymentCount }}</h2>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card text-white bg-success mb-3">
+        <div class="card-header">Total Students</div>
+        <div class="card-body">
+          <h2 class="card-title mb-0">{{ studentCount }}</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.nav-link {
+  font-size: 1.1rem;
+  border-radius: 5px;
+}
+
+.nav-link.active {
+  background-color: rgb(47, 91, 238);
+}
+
+.form-control {
+  width: 250px;
+}

@@ -1,0 +1,57 @@
+<div class="container mt-5">
+  <div class="card mb-5">
+    <div class="card-header">
+      <h2 class="card-title mb-0">Add Payment</h2>
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit()">
+        <div class="mb-3 row">
+          <div class="col">
+            <label for="code" class="form-label">Code:</label>
+            <input type="text" id="code" [(ngModel)]="payment.code" name="code" class="form-control" required>
+          </div>
+          <div class="col">
+            <label for="date" class="form-label">Date:</label>
+            <input type="date" id="date" [(ngModel)]="payment.date" name="date" class="form-control" required>
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <div class="col">
+            <label for="type" class="form-label">Type:</label>
+            <select id="type" [(ngModel)]="payment.type" name="type" class="form-select" required>
+              <option value="CASH">CASH</option>
+              <option value="CHECK">CHECK</option>
+              <option value="TRANSFER">TRANSFER</option>
+            </select>
+          </div>
+          <div class="col">
+            <label for="status" class="form-label">Status:</label>
+            <select id="status" [(ngModel)]="payment.status" name="status" class="form-select" required>
+              <option value="CREATED">CREATED</option>
+              <option value="VALIDATED">VALIDATED</option>
+              <option value="REJECTED">REJECTED</option>
+            </select>
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <div class="col">
+            <label for="file" class="form-label">File:</label>
+            <input type="file" id="file" (change)="onFileSelected($event)" accept="application/pdf" class="form-control"
+              required>
+          </div>
+          <div class="col">
+            <label for="studentId" class="form-label">Student:</label>
+            <select id="studentId" [(ngModel)]="payment.student.id" name="studentId" class="form-select" required>
+              <option *ngFor="let student of students" [value]="student.id">{{ student.firstName }} {{ student.lastName
+                }}</option>
+            </select>
+          </div>
+        </div>
+        <div class="d-flex justify-content-end mt-3">
+          <button type="submit" class="btn btn-outline-success">Add</button>
+          <button type="button" class="btn btn-light mx-2" (click)="cancel()">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

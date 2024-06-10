@@ -1,0 +1,27 @@
+h2, h3 {
+  color: #343a40;
+}
+
+.card {
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+}
+
+.card-body {
+  background-color: #f8f9fa;
+}
+
+.list-group-item {
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.d-flex > div {
+  flex: 1;
+  text-align: center;
+}
+
+.d-flex > div:not(:last-child) {
+  border-right: 1px solid #dee2e6;
+}

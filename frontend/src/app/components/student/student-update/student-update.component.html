@@ -1,0 +1,32 @@
+<div class="container mt-5">
+  <div class="card mb-5" *ngIf="student">
+    <div class="card-header">
+      <h2 class="card-title mb-0">Update Student</h2>
+    </div>
+    <div class="card-body">
+      <form (submit)="updateStudent()">
+        <div class="mb-3">
+          <label for="firstName" class="form-label">First Name:</label>
+          <input type="text" id="firstName" [(ngModel)]="student.firstName" name="firstName" class="form-control"
+            required>
+        </div>
+        <div class="mb-3">
+          <label for="lastName" class="form-label">Last Name:</label>
+          <input type="text" id="lastName" [(ngModel)]="student.lastName" name="lastName" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email:</label>
+          <input type="email" id="email" [(ngModel)]="student.email" name="email" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label for="filiere" class="form-label">Filiere:</label>
+          <input type="text" id="filiere" [(ngModel)]="student.filiere" name="filiere" class="form-control" required>
+        </div>
+        <div class="d-flex justify-content-end mt-3">
+          <button type="submit" class="btn btn-outline-success">Update</button>
+          <button type="button" class="btn btn-light mx-2" (click)="cancelUpdate()">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

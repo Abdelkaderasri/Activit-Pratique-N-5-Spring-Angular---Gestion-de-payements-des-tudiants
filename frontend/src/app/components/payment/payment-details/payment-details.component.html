@@ -1,0 +1,39 @@
+<div class="container mt-5">
+  <div class="col-md-8 offset-md-2 mb-2">
+    <button (click)="back()" class="btn btn-success">Back</button>
+  </div>
+  <div class="col-md-8 offset-md-2 card shadow-sm">
+    <div class="card-header">
+      <h2 class="text-center card-title mb-0">Payment Details</h2>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6">
+          <h4 class="bg-success text-white rounded p-2">Payment Information</h4>
+
+          <p class="p-2"><strong>Code : </strong> {{ payment.code }}</p>
+          <p class="p-2"><strong>Date : </strong> {{ payment.date | date }}</p>
+          <p class="p-2"><strong>Type : </strong> {{ payment.type }}</p>
+          <p class="p-2"><strong>Status : </strong>
+            <span class="badge" [ngClass]="{
+    'bg-success': payment.status === 'VALIDATED',
+    'bg-primary': payment.status === 'CREATED',
+    'bg-danger': payment.status === 'REJECTED'}">
+              {{ payment.status }}
+            </span>
+          </p>
+          <p class="p-2"><strong>File : </strong> {{ payment.file }}</p>
+        </div>
+        <div class="col-md-6">
+          <h4 class=" bg-secondary text-white rounded p-2">Student Information</h4>
+
+          <p class="p-2"><strong>Student ID : </strong> {{ payment.student.id }}</p>
+          <p class="p-2"><strong>First Name : </strong> {{ payment.student.firstName }}</p>
+          <p class="p-2"><strong>Last Name : </strong> {{ payment.student.lastName }}</p>
+          <p class="p-2"><strong>Email : </strong> {{ payment.student.email }}</p>
+          <p class="p-2"><strong>filiere : </strong> {{ payment.student.filiere }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
